@@ -7,7 +7,7 @@ const discordUser = process.env.DISCORD_USER
 const msgDelimiter = ':'
 const messages = []
 const endpoints = {
-  zzz: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/sign?act_id=e202406031448091',
+  zzz: 'https://sg-public-api.hoyolab.com/event/luna/zzz/os/sign?lang=en-us&act_id=e202406031448091',
   gi:  'https://sg-hk4e-api.hoyolab.com/event/sol/sign?act_id=e202102251931481',
   hsr: 'https://sg-public-api.hoyolab.com/event/luna/os/sign?act_id=e202303301540311',
   hi3: 'https://sg-public-api.hoyolab.com/event/mani/sign?act_id=e202110291205111',
@@ -72,6 +72,8 @@ async function main() {
     headers.set('sec-fech-mode', 'cors')
     headers.set('sec-fetch-site', 'same-site')
     headers.set('sec-gpc', '1')
+
+    headers.set("x-rpc-signgame": "zzz")
 
     headers.set('user-agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36')
 
